@@ -1,0 +1,359 @@
+/*---------------------
+Theme and Global Styles
+---------------------*/
+
+:root {
+    --color-navy: #173a52;
+    --color-blue: #2e5d7b;
+    --color-blue-dark: #21465f;
+    --color-blue-light: #e8f0f5;
+    --color-background: #f5f8fa;
+    --color-surface: #ffffff;
+    --color-text: #1f2529;
+    --color-text-muted: #5f6770;
+    --color-border: #d5dfe5;
+    --color-gold: #b48228;
+
+    --shadow-small: 0 4px 14px rgb(23 58 82 / 8%);
+    --shadow-medium: 0 10px 30px rgb(23 58 82 / 12%);
+
+    --border-radius: 10px;
+    --container-width: 1120px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+    margin-inline: auto;
+}
+
+/*---------------------
+Header and Navigation
+---------------------*/
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background-color: rgb(255 255 255 / 95%);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+}
+
+.site-header .container {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.brand {
+    color: var(--color-navy);
+    font-size: 1.15rem;
+    font-weight: 750;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.brand:hover {
+    color: var(--color-blue);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    list-style: none;
+}
+
+.nav-list a {
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+
+    transition: 
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.nav-list a:hover {
+    color: var(--color-navy);
+    background-color: var(--color-blue-length);
+}
+
+/*---------------------
+Hero Section
+---------------------*/
+
+.hero {
+    padding: clamp(5em, 10vw, 8rem) 0;
+    color: white;
+    background:
+        linear-gradient(
+            120deg,
+            rgb(23 58 82 / 98%),
+            rgb(46 93 123 / 92%)
+        ),
+        var(--color-navy);
+}
+
+.hero .container {
+    max-width: var(--container-width);
+}
+
+.eyebrow {
+    margin: 0 0 1rem;
+    color: #f2ce85;
+    font-size: 0.9rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin: 0;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.hero-description {
+    max-width: 680px;
+    margin: 1.5rem 0 0;
+    color: rgb(255 255 255 / 85%);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.hero-action {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+/*---------------------
+Buttons
+---------------------*/
+
+.button {
+    min-width: 145px;
+    padding: 0.75rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 7px;
+
+    transition:
+        transform 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: var(--color-navy);
+    background-color: white;
+    box-shadow: var(--shadow-small);
+}
+
+.button-primary:hover {
+    background-color: var(--color-blue-light);
+    box-shadow: var(--shadow-medium);
+}
+
+.button-secondary {
+    background-color: rgb(255 255 255 / 12%);
+    border-color: white;
+}
+
+/*---------------------
+Features
+---------------------*/
+
+.features {
+    padding: 5rem 0;
+    background-color: var(--color-surface);
+}
+
+.features h2 {
+    margin: 0 0 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    letter-spacing: -0.025em;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.feature-grid article {
+    position: relative;
+    padding: 1.75rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-blue);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+    transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.feature-grid article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.feature-grid h3 {
+    margin: 0 0 0.6rem;
+    color: var(--color-navy);
+    font-size: 1.2rem;
+}
+
+.feature-grid p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/*---------------------
+Project Disclaimer
+---------------------*/
+
+.project-notice {
+    padding: 1.25rem 0;
+    color: #58400b;
+    background-color: #fff3d6;
+    border-block: 1 px solid #ead49d;
+}
+
+.project-notice strong {
+    display: block;
+    font-size: 0.925rem;
+}
+
+/*---------------------
+Footer
+---------------------*/
+
+.site-footer {
+    padding: 1.5rem 0;
+    color: rgb(255 255 255 / 75%);
+    background-color: #102b3d;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/*---------------------
+Accessibility
+---------------------*/
+
+a:focus-visible {
+    outline: 3px solid #e9bd63;
+    outline-offset: 3px;
+}
+
+/*---------------------
+Responsive Design
+---------------------*/
+
+@media (max-width: 750px) {
+    .site-header .container {
+        padding-block: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .nav-list {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .nav-list a {
+        padding-inline: 0.65rem;
+    }
+
+    .hero {
+        padding: 4.5rem 0;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero-action {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
