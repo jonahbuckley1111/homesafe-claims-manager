@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simulated application for managing property inventory, insurance policies, and claims.">
+    <title>HomeSafe Claims Manager - Create Account</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="register-page">
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html" aria-label="HomeSafe Claims Manager - Create Account">
+                HomeSafe Claims Manager
+            </a>
+            <nav aria-label="Primary navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html" aria-current="page">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <p class="eyebrow">Protect. Document. Manage.</p>
+                <h1>Keep your home records and claims organized.</h1>
+                <p class="hero-description">
+                    Maintain a property inventory, review simulated insurance policies, 
+                    and submit and track claims from one secured place.
+                </p>
+            </div>
+        </section>
+        <section class="features registration-section" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 id="features-heading">Create Account</h2>
+                <form id="registration-form" action="/register" method="post">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input
+                            type="text"
+                            id="first-name"
+                            name="firstName"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input
+                            type="text"
+                            id="last-name"
+                            name="lastName"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-number">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone-number"
+                            name="phoneNumber"
+                            autocomplete="tel"
+                            placeholder="555-555-5555"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            aria-describedby="password-requirements"
+                            required
+                        >
+                        <p id="password-requirements">
+                            Password must contain at least 8 characters.
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirmPassword"
+                            autocomplete="new-password"
+                            minlength="8"
+                            aria-describedby="password-error"
+                            required
+                        >
+                        <p id="password-error" role="alert" aria-live="polite"></p>
+                    </div>
+
+                    <!--Add framework's CRSF token here later.-->
+
+                    <button type="submit">Create Account</button>
+                </form>
+            </div>
+        </section>
+        <aside class="project-notice" aria-label="Project Disclaimer">
+                <div class="container">
+                    <strong>Educational Project:
+                        HomeSafe Claims Manager is a simulated application. It does not issue real insurance policies or process real claims.
+                    </strong>
+                </div>
+            </aside>
+    </main>
+    <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2026 HomeSafe Claims Manager. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>
