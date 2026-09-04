@@ -121,7 +121,7 @@ Header and Navigation
 
 .nav-list a:hover {
     color: var(--color-navy);
-    background-color: var(--color-blue-length);
+    background-color: var(--color-blue-light);
 }
 
 /*---------------------
@@ -537,6 +537,152 @@ Features
     text-decoration: underline;
 }
 
+/* ------------------------------
+   About page
+------------------------------ */
+
+.about-page .hero {
+    padding: 3.5rem 0;
+}
+
+.about-page .hero h1 {
+    max-width: 700px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.about-section {
+    padding: 4.5rem 0;
+}
+
+/* Introduction */
+
+.about-intro {
+    max-width: 820px;
+    margin-bottom: 3.5rem;
+}
+
+.about-intro .eyebrow {
+    margin-bottom: 0.75rem;
+    color: var(--color-blue);
+}
+
+.about-intro h2 {
+    margin: 0 0 1rem;
+    color: var(--color-navy);
+}
+
+.about-intro p {
+    margin: 0 0 1rem;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+}
+
+.about-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Main feature cards */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.about-card {
+    padding: 1.75rem;
+
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-blue);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+}
+
+.about-card h3 {
+    margin: 0 0 0.75rem;
+    color: var(--color-navy);
+    font-size: 1.2rem;
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/* Role information */
+
+.roles-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.roles-section > h2 {
+    margin: 0 0 0.75rem;
+    color: var(--color-navy);
+}
+
+.roles-section > p {
+    max-width: 760px;
+    margin: 0 0 2rem;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.role-card {
+    padding: 1.5rem;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-gold);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+}
+
+.role-card h3 {
+    margin: 0 0 0.6rem;
+    color: var(--color-navy);
+    font-size: 1.15rem;
+}
+
+.role-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/* Project purpose */
+
+.project-purpose {
+    margin-top: 4rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+
+    background-color: var(--color-blue-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.project-purpose h2 {
+    margin: 0 0 1rem;
+    color: var(--color-navy);
+}
+
+.project-purpose p {
+    max-width: 850px;
+    margin: 0 0 1rem;
+    color: var(--color-text-muted);
+}
+
+.project-purpose p:last-child {
+    margin-bottom: 0;
+}
+
 /*---------------------
 Project Disclaimer
 ---------------------*/
@@ -545,7 +691,7 @@ Project Disclaimer
     padding: 1.25rem 0;
     color: #58400b;
     background-color: #fff3d6;
-    border-block: 1 px solid #ead49d;
+    border-block: 1px solid #ead49d;
 }
 
 .project-notice strong {
@@ -670,5 +816,34 @@ Login page small screens
 
     .login-options {
         flex-direction: column;
+    }
+}
+
+/* About page responsive design */
+
+@media (max-width: 850px) {
+    .about-grid,
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roles-section {
+        margin-top: 3rem;
+        padding-top: 3rem;
+    }
+
+    .project-purpose {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-section {
+        padding: 3rem 0;
+    }
+
+    .about-card,
+    .role-card {
+        padding: 1.25rem;
     }
 }
